@@ -1,15 +1,23 @@
-const blankline = '  |   |  ';
-const guessLine = '1 |   |  ';
-const bombLine = '  | B |  ';
+\*
+* Simple minesweeper game in commandline,
+* manually set board to show functionality.
+* -Mark Rice 2018.
+*/
 
-// Print blank board.
-console.log('This is what an empty board would look like:');
-console.log(blankline);
-console.log(blankline);
-console.log(blankline);
+const printBoard = (board) => {
+  console.log('Current Board: ');
+  console.log(board[0].join(' | '));
+  console.log(board[1].join(' | '));
+  console.log(board[2].join(' | '));
+};
 
-// Print simulated board with guess and bombs.
-console.log('This is what a board with a guess and a bomb on it would look like:');
-console.log(guessLine);
-console.log(bombLine);
-console.log(blankline);
+const board = [
+  [' ', ' ', ' '],
+  [' ', ' ', ' '],
+  [' ', ' ', ' ']
+];
+
+printBoard(board);
+board[0][1] = '1';
+board[2][2] = 'B';
+printBoard(board);
